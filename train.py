@@ -58,7 +58,7 @@ def train_spacy():
     # get names of other pipes to disable them during training
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != 'ner']
     with nlp.disable_pipes(*other_pipes):  # only train NER
-        optimizer = nlp.begin_training()
+        optimizer = nlp.begin_training() #start training
         for itn in range(10):
             print("Statring iteration " + str(itn))
             random.shuffle(TRAIN_DATA)
